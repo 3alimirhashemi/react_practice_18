@@ -20,9 +20,12 @@ class Msg extends React.Component{
 
     render(){
       return(
+        <div>
           <h2 className='timer'>
             it is time: {this.state.time}
           </h2>
+          <button className='button' onClick={this.props.title}>click</button>
+        </div>
   
     )
     }

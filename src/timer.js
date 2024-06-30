@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import "./style.css"
 import App from "./app"
 import Msg from './msg';
+import CountDown from './countdown';
 
 class Timer extends React.Component{
     render(){
@@ -10,6 +11,7 @@ class Timer extends React.Component{
         <div className='main'>
           <App/>
           <Msg/>
+          <CountDown/>
         </div>
       )
     }

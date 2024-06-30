@@ -24,3 +24,25 @@ body{
     background: black;
     color: chocolate;
 }
+.wrapper{
+    text-align: center;
+    color: chocolate;
+}
+#timeCount{
+    border-radius: 2%;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: white;
+
+}
+#timeCount:focus{
+    box-shadow: 0 0 10px rgb(146,200,216);
+    padding: 0  10px 0 10px;
+    -moz-animation-delay: 5ms;
+}
+#current-time{
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+}

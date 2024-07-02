@@ -24,7 +24,7 @@ class Msg extends React.Component{
           <h2 className='timer'>
             it is time: {this.state.time}
           </h2>
-          <button className='button' onClick={this.props.title}>click</button>
+          <button className='button' onClick={this.props.settitle}>click</button>
         </div>
   
     )

@@ -25,6 +25,14 @@ class Msg extends React.Component{
             it is time: {this.state.time}
           </h2>
           <button className='button' onClick={this.props.settitle}>click</button>
+          <button className='btn' 
+          style={
+            {background:this.props.islight ? "black":"white",
+              color:this.props.islight ? "white":"black"
+            }
+            
+            } 
+            onClick={this.props.handelLight}>{this.props.islight ? "dark":"light"}</button>
         </div>
   
     )

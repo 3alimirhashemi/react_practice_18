@@ -12,6 +12,7 @@ body{
     flex-direction: column;
     background: rgb(0, 0, 0);
     color: rgb(185, 179, 175);
+    transition: background-color 1s;
 }
 .timer{
     width: 400px;

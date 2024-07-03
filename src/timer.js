@@ -49,14 +49,19 @@ import CountDown from './countdown';
 // }
  const Timer = () => {
   const [title, setTextMatch] = useState('HI GUYS..')
+  const [islight, setLight] = useState(false)
 
   const handeltitle = ()=>{
     setTextMatch('WELLCOME GUYS..')
   }
+  const handelLight = () =>{
+    setLight(!islight)
+  }
   return(
-    <div className='main'>
+    <div className='main' style={{background:islight ? "white":"black"}}>
       <App title={title}/>
-      <Msg settitle={handeltitle}/>
+      <Msg settitle={handeltitle} handelLight={handelLight} islight={islight}/>
+
       <CountDown/>
     </div>
   )

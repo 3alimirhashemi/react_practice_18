@@ -5,6 +5,7 @@ import "./style.css"
 import App from "./app"
 import Msg from './msg';
 import CountDown from './countdown';
+import Timerlist from './timelist';
 
 // class Timer extends React.Component{
 //   constructor(){
@@ -50,6 +51,7 @@ import CountDown from './countdown';
  const Timer = () => {
   const [title, setTextMatch] = useState('HI GUYS..')
   const [islight, setLight] = useState(false)
+  const [time,setTime] = useState(["09 : 12 : 12", "00 : 12 : 12",])
 
   const handeltitle = ()=>{
     setTextMatch('WELLCOME GUYS..')
@@ -61,7 +63,9 @@ import CountDown from './countdown';
     <div className='main' style={{background:islight ? "white":"black"}}>
       <App title={title}/>
       <Msg settitle={handeltitle} handelLight={handelLight} islight={islight}/>
-
+      <Timerlist>
+        {time}
+      </Timerlist>
       <CountDown/>
     </div>
   )

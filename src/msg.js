@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./style.css"
+import Timerlist from './timelist';
 
 class Msg extends React.Component{
     constructor(){
       super()
       this.state = {
-        time :new Date().toLocaleTimeString()
+        time :new Date().toLocaleTimeString(),
+        seconds: 0,
+        minutes: 0,
+        hour: 0,
+        isStart:false,
   
       }
     }
@@ -17,11 +22,18 @@ class Msg extends React.Component{
         })
       },1000)
     }
+    saveTime = ()=>{
+      let h = this.state.hour
+      let m = this.state.minutes
+      let s = this.state.seconds
+      let newTime = `${h>9? h:"0"+h} : ${m>9? m:"0"+m} : ${s>9? s:"0"+s}`
+      this.props.setTime([...this.props.time,newTime])
+    }
 
     render(){
       return(
         <div>
-          <h2 className='timer'>
+          <h2 className='timer' onClick={this.saveTime}>
             it is time: {this.state.time}
           </h2>
           <button className='button' onClick={this.props.settitle}>click</button>
@@ -33,6 +45,10 @@ class Msg extends React.Component{
             
             } 
             onClick={this.props.handelLight}>{this.props.islight ? "dark":"light"}</button>
+            <Timerlist>
+              {this.props.time}
+
+            </Timerlist>
         </div>
   
     )

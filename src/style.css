@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
 }
 .main{
     width: 100%;
@@ -29,7 +30,4 @@ body{
     text-align: center;
     color: chocolate;
 }
-.main_title_hour{
-    border: solid 1px red;
-    
-}
+

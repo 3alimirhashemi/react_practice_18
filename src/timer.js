@@ -62,10 +62,8 @@ import Timerlist from './timelist';
   return(
     <div className='main' style={{background:islight ? "white":"black"}}>
       <App title={title}/>
-      <Msg settitle={handeltitle} handelLight={handelLight} islight={islight}/>
-      <Timerlist>
-        {time}
-      </Timerlist>
+      <Msg settitle={handeltitle} handelLight={handelLight} islight={islight} time={time} setTime={setTime}/>
+      
       <CountDown/>
     </div>
   )

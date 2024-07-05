@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "./style.css"
 import Timerlist from './timelist';
+import { testcontext } from './context';
 
 class Msg extends React.Component{
     constructor(){
@@ -15,6 +16,7 @@ class Msg extends React.Component{
   
       }
     }
+    static contextType = testcontext;
     componentDidMount(){
       setInterval(()=>{
         this.setState({
@@ -27,7 +29,7 @@ class Msg extends React.Component{
       let m = this.state.minutes
       let s = this.state.seconds
       let newTime = `${h>9? h:"0"+h} : ${m>9? m:"0"+m} : ${s>9? s:"0"+s}`
-      this.props.setTime([...this.props.time,newTime])
+      this.context.setTime([...this.context.time, newTime])
     }
 
     render(){
@@ -45,10 +47,6 @@ class Msg extends React.Component{
             
             } 
             onClick={this.props.handelLight}>{this.props.islight ? "dark":"light"}</button>
-            <Timerlist>
-              {this.props.time}
-
-            </Timerlist>
         </div>
   
     )

@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import ReactDOM from 'react-dom/client';
 import "./style.css"
 import App from "./app"
 import Msg from './msg';
 import CountDown from './countdown';
+import { testcontext } from './context';
 import Timerlist from './timelist';
 
 // class Timer extends React.Component{
@@ -60,12 +60,20 @@ import Timerlist from './timelist';
     setLight(!islight)
   }
   return(
-    <div className='main' style={{background:islight ? "white":"black"}}>
-      <App title={title}/>
-      <Msg settitle={handeltitle} handelLight={handelLight} islight={islight} time={time} setTime={setTime}/>
-      
-      <CountDown/>
-    </div>
+    <testcontext.Provider value={{
+      time:time,
+      setTime:setTime,
+    }}>
+        <div className='main' style={{background:islight ? "white":"black"}}>
+          <App title={title} />
+          <Msg 
+          settitle={handeltitle} 
+          handelLight={handelLight}
+           islight={islight} />
+          <CountDown />
+          <Timerlist />
+        </div>
+    </testcontext.Provider>
   )
  }
 
